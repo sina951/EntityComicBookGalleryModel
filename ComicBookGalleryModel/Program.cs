@@ -11,10 +11,14 @@ namespace ComicBookGalleryModel
 {
     // Here we use the context class to add a comic book, retrieve a list of comic books, and
     // write the comic book series title to the console
+    // Step 1. Instantiate an instance of your context class
+    // Step 2. Use context to add a comicbook to database.
     class Program
     {
         static void Main(string[] args)
         {
+            // Instantiate an instance of your context class
+            // the using statement will close connection and dump cache when done
             using (var context = new Context())
             {
                 context.Database.Log = (message) => Debug.WriteLine(message);
