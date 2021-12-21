@@ -13,6 +13,8 @@ namespace ComicBookGalleryModel
     {
         // Our contect class needs to contain a collection of Db set properties
         // one property for each entity(class) we need to write a query for
+        // Ass constructor We will be dropping and creating our database every time our model changes using SetInitializer() it has to be called before Context class is used
+        // that is why we do public Context() again
         public Context()
         {
             Database.SetInitializer(new DatabaseInitializer());
@@ -33,3 +35,4 @@ namespace ComicBookGalleryModel
         }
     }
 }
+// 
