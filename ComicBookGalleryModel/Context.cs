@@ -11,8 +11,8 @@ namespace ComicBookGalleryModel
 {
     public class Context : DbContext
     {
-        // Our contect class needs to contain a  collection of Db set properties
-        // one propertie for each entity(class) we need to write a query for
+        // Our contect class needs to contain a collection of Db set properties
+        // one property for each entity(class) we need to write a query for
         public Context()
         {
             Database.SetInitializer(new DatabaseInitializer());
