@@ -20,7 +20,7 @@ namespace ComicBookGalleryModel.Models
         }
         // Series is the PRINCIPAL ENTITY and NAVIGATION PROPERTY, so setting a Id property is very important
         // Why is Id imp? so EF will know that we intend the data for the series entity to be stored in its own table.
-        // EF would tread Series class as an complex type. Thus adding its Title and Description to ComicBook's database Table!
+        // if no Id, EF would tread Series class as an complex type. Thus adding its Title and Description to ComicBook's database Table!
         // example https://entityframework.net/one-to-many-relationship
         public int Id { get; set; }
         [Required, StringLength(200)]

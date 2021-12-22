@@ -28,6 +28,7 @@ namespace ComicBookGalleryModel
                 //var comicBook1 = context.ComicBooks.Find(comicBookId);
                 //var comicBook2 = context.ComicBooks.Find(comicBookId);
 
+                // To get Series data we use Include() method
                 var comicBook1 = context.ComicBooks
                     .Include(cb => cb.Series)
                     .Include(cb => cb.Artists.Select(a => a.Artist))

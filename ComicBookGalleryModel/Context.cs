@@ -17,6 +17,7 @@ namespace ComicBookGalleryModel
         // that is why we do public Context() again
         public Context()
         {
+            // seed the database
             Database.SetInitializer(new DatabaseInitializer());
         }
         // set properties
@@ -26,13 +27,14 @@ namespace ComicBookGalleryModel
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
+            // We change the avrage rateing column data type! 2 ways to do it
+            // 1
             //modelBuilder.Conventions.Remove<DecimalPropertyConvention>();
             //modelBuilder.Conventions.Add(new DecimalPropertyConvention(5, 2));
-
+            // 2 - Using the fluent API
             modelBuilder.Entity<ComicBook>()
-                .Property(cb => cb.AverageRating)
-                .HasPrecision(5, 2);
+                .Property(cb => cb.AverageRating) // targert the property we want to update
+                .HasPrecision(5, 2);              // set the new precision
         }
     }
 }
-// 

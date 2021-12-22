@@ -9,12 +9,15 @@ namespace ComicBookGalleryModel.Models
 {
     public class ComicBook
     {
+        // Default consturctor to initialize the artist collection property
         public ComicBook()
         {
             Artists = new List<ComicBookArtist>();
         }
 
         public int Id { get; set; }
+        // {Navigation Property Name}{Principal Primary Key Property Name} --> Naming convention for foreign id key prop
+        // public int SeriesId { get; set; } Ef will detect and determine this property as a foreign key property
         public int SeriesId { get; set; }
         public int IssueNumber { get; set; }
         public string Description { get; set; }
